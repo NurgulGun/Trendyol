@@ -18,12 +18,12 @@ public class TrendyolTest extends BaseTest {
         ProductPage productPage = new ProductPage(driver);
 
         loginPage.login("personalsample0@gmail.com", "P123456.");
-//        loginPage.closeNotification();
-//        tabPage.changeTabAndCheckImage();
-//        campaignPage.selectRandomCampaign();
-//        campaignPage.checkProductImage();
-//        campaignPage.selectRandomProduct();
-//        productPage.addBasket();
+        loginPage.closeNotification();
+        tabPage.changeTabAndCheckImage();
+        campaignPage.selectRandomCampaign();
+        campaignPage.checkProductImage();
+        campaignPage.selectRandomProduct();
+        productPage.addBasket();
 
     }
 }
