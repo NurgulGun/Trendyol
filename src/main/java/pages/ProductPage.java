@@ -18,14 +18,7 @@ public class ProductPage extends BasePage {
         clickByJS(addBasketButton);
         Thread.sleep(2000);
 
-        boolean isExist;
-        try {
-            driver.findElement(basketCountItem);
-            isExist = true;
-        } catch (NoSuchElementException e) {
-            isExist = false;
-        }
-        if(isExist) {
+        if(isExist(basketCountItem)) {
             System.out.println("** Ürün sepete eklendi **");
         }
 

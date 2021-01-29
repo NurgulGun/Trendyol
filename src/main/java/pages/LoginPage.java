@@ -3,7 +3,6 @@ package pages;
 import utils.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
@@ -39,16 +38,9 @@ public class LoginPage extends BasePage {
     public void closeNotification() throws InterruptedException {
 
         // Login sonrası gelen bilgilendirme popupı varsa kapatılır.
-
         Thread.sleep(2000);
-        boolean isExist;
-        try {
-            driver.findElement(popupCloseBtn);
-            isExist = true;
-        } catch (NoSuchElementException e) {
-            isExist = false;
-        }
-        if(isExist) {
+
+        if(isExist(popupCloseBtn)) {
             driver.findElement(popupCloseBtn).click();
             System.out.println("** Bilgilendirme popup'ı kapatıldı **");
         }

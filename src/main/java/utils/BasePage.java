@@ -1,9 +1,7 @@
 package utils;
 
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -76,5 +74,16 @@ public class BasePage {
     public void clickByJS (WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", element);
+    }
+
+    public boolean isExist(By locator) {
+        boolean isExist;
+        try {
+            driver.findElement(locator);
+            isExist = true;
+        } catch (NoSuchElementException e) {
+            isExist = false;
+        }
+        return isExist;
     }
 }
