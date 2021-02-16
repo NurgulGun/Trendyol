@@ -82,7 +82,7 @@ public class CampaignPage extends BasePage {
 
 //      Ürün image'leri kontrol edilir.
         for (WebElement element: driver.findElements(productImageTag)) {
-            if (!checkImageState(element))
+            if (checkStateImage(element))
             {
                 System.out.println("Image yüklenmedi ->  " + element.getAttribute("alt"));
             }

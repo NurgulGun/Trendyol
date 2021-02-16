@@ -75,7 +75,7 @@ public class TabPage extends BasePage {
 
 //          Image'lerin yükenip yüklenmediği kontrol edilir.
             for (WebElement element: imgList) {
-                if (!checkImageState(element))
+                if (checkStateImage(element))
                 {
                     System.out.println("Image yüklenmedi ->  " + element.getAttribute("alt"));
                 }

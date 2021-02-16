@@ -14,8 +14,6 @@ import java.util.Scanner;
 public class BaseTest {
 
     protected WebDriver driver;
-    private String URL = "https://www.trendyol.com";
-    private int browserIndex;
 
     public BaseTest(WebDriver driver) {
         this.driver = driver;
@@ -29,6 +27,7 @@ public class BaseTest {
 
         System.out.println("** Lütfen browser seçiniz: ** \n--------------------------\n * Chrome  -> 1 \n * Firefox -> 2 \n--------------------------\n");
 
+        int browserIndex;
         do {
             Scanner reader = new Scanner(System.in);
             browserIndex = reader.nextInt();
@@ -58,6 +57,7 @@ public class BaseTest {
             }
         } while (browserIndex != 1 && browserIndex != 2);
 
+        String URL = "https://www.trendyol.com";
         driver.get(URL);
         driver.manage().window().maximize();
         Thread.sleep(5000);

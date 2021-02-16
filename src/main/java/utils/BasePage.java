@@ -55,7 +55,7 @@ public class BasePage {
         return  ((Number) js.executeScript("return document.body.scrollHeight")).intValue();
     }
 
-    public boolean checkImageState (WebElement element) {
+    public boolean checkStateImage(WebElement element) {
         return (Boolean) ((JavascriptExecutor)driver).executeScript
                 ("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", element);
 
